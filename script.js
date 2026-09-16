@@ -60,17 +60,17 @@ async function updateFees() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        query: `{ token(id: "${CA.toLowerCase()}") { creatorFeesPaidWETH } }`,
+        query: `{ token(id: "${CA.toLowerCase()}") { reflectionsPaid } }`,
       }),
     });
 
     if (!response.ok) throw new Error(`Fee source returned ${response.status}`);
     const payload = await response.json();
-    const value = Number(payload?.data?.token?.creatorFeesPaidWETH);
+    const value = Number(payload?.data?.token?.reflectionsPaid);
     if (!Number.isFinite(value)) throw new Error("Fee value unavailable");
 
     animateFees(value);
-    feesStatus.textContent = "paid to creator · live";
+    feesStatus.textContent = "holder reflections · live";
     feesStatus.title = `Last updated ${new Date().toLocaleTimeString()}`;
   } catch {
     feesPaid.textContent = "—";
