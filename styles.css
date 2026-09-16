@@ -66,11 +66,13 @@ h2 { font-size: clamp(44px, 6vw, 78px); line-height: .92; letter-spacing: -.055e
 .about-copy { font-size: 16px; line-height: 1.7; max-width: 480px; }
 .about-copy p:first-child { color: var(--purple); font-weight: 500; }
 .scribble { display: inline-block; background: var(--accent); padding: 5px 9px; transform: rotate(-3deg); color: var(--ink)!important; }
-.stats { margin-top: 100px; display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--ink); }
+.stats { margin-top: 100px; display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--ink); }
 .stats article { min-height: 210px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; }
 .stats article + article { border-left: 1px solid var(--ink); }
 .stats span,.stats small { font-size: 11px; letter-spacing: .1em; }
 .stats strong { font-family: "Archivo Black", sans-serif; font-size: clamp(48px, 7vw, 82px); color: var(--purple); letter-spacing: -.06em; }
+.stats .fee-stat strong { font-size: clamp(30px, 3.4vw, 48px); line-height: .95; }
+.fee-stat small { color: var(--purple); }
 
 .how { position: relative; width: 100%; max-width: none; padding: 120px max(20px, calc((100vw - 1180px)/2)); background: var(--purple-dark); color: var(--cream); overflow: hidden; }
 .bean-how-tall { --bean-tilt: -7deg; width: 290px; height: 590px; right: -54px; top: 150px; opacity: .38; filter: saturate(.85) drop-shadow(15px 18px 0 rgba(0,0,0,.12)); }
@@ -126,6 +128,12 @@ footer { background: var(--accent); border-top: 2px solid var(--ink); }
   .legal { text-align: left; }
   .bean-contract-left { width: 105px; left: -50px; top: 105px; opacity: .65; }
   .bean-contract-right { width: 125px; right: -75px; bottom: 10px; }
+}
+
+@media (min-width: 821px) and (max-width: 1050px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stats article:nth-child(3) { border-left: 0; border-top: 1px solid var(--ink); }
+  .stats article:nth-child(4) { border-top: 1px solid var(--ink); }
 }
 
 @media (max-width: 500px) {
