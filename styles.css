@@ -81,11 +81,13 @@ h2 { font-size: clamp(44px, 6vw, 78px); line-height: .92; letter-spacing: -.055e
 .how-head { display: flex; justify-content: space-between; gap: 40px; align-items: end; }
 .how-head p { line-height: 1.7; color: #c6b8d8; }
 .steps { list-style: none; padding: 0; margin: 75px 0 0; border-top: 1px solid rgba(244,239,229,.32); }
-.steps li { display: grid; grid-template-columns: 100px 1fr; gap: 30px; padding: 36px 0; border-bottom: 1px solid rgba(244,239,229,.32); transition: padding-left .2s, background .2s; }
+.steps li { display: grid; grid-template-columns: 70px minmax(0, 1fr) auto; align-items: center; gap: 30px; padding: 36px 0; border-bottom: 1px solid rgba(244,239,229,.32); transition: padding-left .2s, background .2s; }
 .steps li:hover { padding-left: 20px; background: rgba(255,107,69,.08); }
 .steps li > span { color: var(--accent); font-size: 12px; }
 .steps h3 { font-size: 25px; margin-bottom: 9px; }
 .steps p { margin: 0; color: #c6b8d8; line-height: 1.6; }
+.step-link { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 17px; border: 1px solid rgba(244,239,229,.58); color: var(--cream); font-size: 11px; font-weight: 500; letter-spacing: .07em; white-space: nowrap; transition: color .2s, background .2s, border-color .2s, transform .2s; }
+.step-link:hover { color: var(--ink); background: var(--accent); border-color: var(--accent); transform: rotate(-1deg); }
 
 .contract { position: relative; padding-block: 140px; text-align: center; }
 .bean-contract-left { --bean-tilt: -12deg; width: 145px; left: -95px; top: 75px; }
@@ -123,7 +125,8 @@ footer { background: var(--accent); border-top: 2px solid var(--ink); }
   .how-head { display: block; }
   .bean-how-tall { width: 210px; height: 460px; right: -75px; top: 180px; opacity: .24; }
   .bean-how-small { width: 110px; left: -35px; }
-  .steps li { grid-template-columns: 48px 1fr; }
+  .steps li { grid-template-columns: 48px minmax(0, 1fr); gap: 20px; }
+  .step-link { grid-column: 2; justify-self: start; }
   .footer-inner { grid-template-columns: 1fr; gap: 25px; padding-block: 50px; }
   .legal { text-align: left; }
   .bean-contract-left { width: 105px; left: -50px; top: 105px; opacity: .65; }
